@@ -1,0 +1,63 @@
+<template>
+    <div class="main-header-div">
+        <div class="div-title">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-size_1-of-12">
+                    <lightning-icon class="slds-align_absolute-center" icon-name="utility:shopping_bag"></lightning-icon>
+                  </div>
+                  <div class="slds-col slds-size_10-of-12">
+                    <h1>Shopping Card</h1>
+                </div>
+                <div class="slds-col slds-size_1-of-12">
+                    <lightning-button-icon  variant="bare" icon-name="utility:threedots_vertical"></lightning-button-icon>
+                </div>
+              </div>
+        </div>
+        <div>
+            <lightning-combobox name="progress" value={valueAddPackage} placeholder="Add package" options={options}></lightning-combobox>
+        </div>
+        <div>
+           <img src="https://static.thenounproject.com/png/915850-200.png" class="slds-m-top_small slds-align_absolute-center 
+           add-packageimg" />
+           <h3 class="slds-align_absolute-center img-label">Please add a package</h3>
+        </div>
+    </div>
+    <div class="total-amount">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_7-of-12">
+              <h2>$ Total in 1st month</h2>
+            </div>
+            <div class="slds-col slds-size_5-of-12 showvat">
+               <p>Show VAT</p>
+                <lightning-input type="toggle" name="input1"></lightning-input>
+            </div>
+        </div>
+        <div class="inner-div">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>ONE TIME COST</td>
+                    <td>MONTHLY</td>
+                </tr>
+                <tr>
+                    <td class="netcell">Net</td>
+                    <td>$ 0.00</td>
+                    <td>$ 0.00</td>
+                </tr>
+                <tr>
+                    <td>Tax</td>
+                    <td>$ 0.00</td>
+                    <td>$ 0.00</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>$ 0.00</td>
+                    <td>$ 0.00</td>
+                </tr>
+            </table>
+            <div class="proceed-button">
+                <lightning-button style="margin-left: 35%;" variant="success" label="Proceed" title="Search" onclick={handleClick}></lightning-button>
+            </div>
+        </div>
+    </div>
+</template>

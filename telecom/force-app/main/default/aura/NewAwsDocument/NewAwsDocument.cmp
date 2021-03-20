@@ -1,0 +1,69 @@
+<aura:component implements="lightning:actionOverride,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName" access="global" controller="newawsdocument">
+    <aura:attribute name="parentRecordId" type="String" />
+    <aura:attribute name="isOpen" type="boolean" default="true"/>
+    <aura:attribute name="fileName" type="String" default="No File Selected.." />
+    <aura:attribute name="newDocument" type="Aws_Document__c"
+                    default="{ 'sobjectType': 'Aws_Document__c',
+                             'Name': '',
+                             'Case__c': '',
+                             'File__c': ''
+                             }"/>
+    <!--Declare Event Handlers-->
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" description="Call doInit function on component load to get picklist values"/>
+    
+    <aura:if isTrue="{!v.isOpen}">
+        <!--###### MODAL BOX Start######--> 
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- ###### MODAL BOX HEADER Start ######-->
+                <header class="slds-modal__header">
+                    <lightning:buttonIcon iconName="utility:close"
+                                          onclick="{!c.closeModel}"
+                                          alternativeText="close"
+                                          variant="bare-inverse"
+                                          class="slds-modal__close"/>
+                    <lightning:layout>
+                        <lightning:layoutItem>
+                            <lightning:icon iconName="standard:scan_card" alternativeText="Create Rule"/>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem padding="horizontal-small">
+                            <div class="page-section page-header">
+                                <h1 class="slds-text-heading--label">New Aws Document</h1>
+                            </div>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                </header>
+                <!--###### MODAL BOX BODY Part Start######-->
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">     
+                    
+                    <div class="slds-form-element slds-form-element_horizontal">
+                        <legend class="slds-form-element__legend slds-form-element__label">Aws Document Name</legend>
+                        <lightning:input aura:id="newdocument"
+                                         name="name"
+                                         value="{!v.newDocument.Name}"
+                                         required="true"/> 
+                    </div>   
+                    
+                    <fieldset class="slds-form-element slds-form-element_horizontal">
+                        <lightning:input aura:id="fuploader" onchange="{!c.handleFilesChange}" type="file" name="file" label="Upload File" multiple="false"/>
+                        <div class="slds-text-body_small slds-text-color_error">{!v.fileName}</div>
+                        <br/>  
+                    </fieldset>
+                    
+                </div>
+                <!--###### MODAL BOX FOOTER Part Start ######-->
+                <footer class="slds-modal__footer">
+                    <lightning:button label="Save" 
+                                      variant="brand"
+                                      onclick="{!c.handleSave}"/>
+                    <lightning:button label="Cancel" 
+                                      variant="brand"
+                                      onclick="{! c.closeModel }"/>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <!--###### MODAL BOX Part END Here ######-->
+        
+    </aura:if>             
+</aura:component>

@@ -1,0 +1,37 @@
+<template>
+    <div class="main-header-div">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_2-of-12">
+                <img src={navigationLogo} class="logo">
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                <lightning-input type="text" name="input1" placeholder="Postal code" ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-12">
+                <lightning-input type="text" name="input1" placeholder="House" ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_1-of-12">
+                <lightning-input type="text" name="input1" placeholder="Suffix" ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                <lightning-input type="text" name="input1" placeholder="Street" ></lightning-input>
+            </div>
+            <div class="slds-col slds-size_2-of-12">
+                <div class="input-city" style="position:absolute;">
+                    <lightning-input type="text" name="input1" placeholder="City" ></lightning-input>
+                </div>
+                <div class="slds-float_right search-button-icon">
+                    <lightning-button-icon variant="bare" icon-name="utility:search" alternative-text="search" class="slds-icon_small" title="search"></lightning-button-icon>
+                </div>
+            </div>
+            <!--div class="slds-col slds-size_1-of-12">
+                <lightning-button-icon icon-name="utility:search" alternative-text="search" class="slds-m-left_xx-small" title="search"></lightning-button-icon>
+            </div-->
+            <div class="slds-col slds-size_2-of-12">
+                <div class="logout-button-icon slds-float_right">
+                    <lightning-button-icon variant="bare" icon-name="utility:reassign" size="large"></lightning-button-icon>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

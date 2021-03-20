@@ -1,0 +1,23 @@
+.main-header-div{
+    background-color: #ffffff;
+    text-transform: capitalize;
+    line-height: normal;
+    padding-bottom: 4px; 
+    box-shadow: 0 0 50px 0 hsla(0,0%,71.8%,.15);  
+}
+.input-city{
+    position:absolute;
+}
+.search-button-icon{
+    position:relative;
+    margin-top: 24px;
+    margin-right: 30%; 
+}
+.logo{
+    max-width: 50%;
+    height: auto;
+    margin-left: 25%;
+}
+.logout-button-icon{
+    margin: 8%;
+}
